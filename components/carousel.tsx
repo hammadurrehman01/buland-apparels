@@ -78,7 +78,7 @@ export function Carousel({
           orientation === "horizontal" ? "top-1/2 -translate-y-1/2" : "left-1/2 -translate-x-1/2",
           "left-4",
         )}
-        disabled={prevBtnDisabled}
+        // disabled={prevBtnDisabled}
         onClick={scrollPrev}
       >
         <ChevronLeft className="h-4 w-4" />
@@ -92,7 +92,7 @@ export function Carousel({
           orientation === "horizontal" ? "top-1/2 -translate-y-1/2" : "left-1/2 -translate-x-1/2",
           "right-4",
         )}
-        disabled={nextBtnDisabled}
+        // disabled={nextBtnDisabled}
         onClick={scrollNext}
       >
         <ChevronRight className="h-4 w-4" />

@@ -1,11 +1,18 @@
 import type { Metadata } from "next";
-import { Oswald } from "next/font/google";
+import { Plus_Jakarta_Sans as FontSans } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "./(Home)/Navbar";
+import { cn } from "@/lib/utils";
 
-const oswald = Oswald({
-  variable: "--font-oswald-mono",
+// const montserrat = Montserrat({
+//   variable: "--font-montserrat",
+//   subsets: ["latin"],
+// });
+
+const fontSans = FontSans({
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-sans",
 });
 
 export const metadata: Metadata = {
@@ -20,8 +27,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${oswald.variable} antialiased`}
+     <body
+        className={cn(
+          "font-sans antialiased",
+          fontSans.variable
+        )}
       >
         <Navbar/>
         {children}

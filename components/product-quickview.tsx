@@ -15,12 +15,12 @@ export function ProductQuickView({ product }: { product: any }) {
         <div className="overflow-hidden rounded-lg" ref={emblaRef}>
           <div className="flex">
             {product.images.map((image: string, index: number) => (
-              <div key={index} className="relative flex-[0_0_100%] aspect-square">
+              <div key={index} className="relative flex-[0_0_100%] aspect-square ">
                 <Image
                   src={image || "/placeholder.svg"}
                   alt={`${product.name} - Image ${index + 1}`}
                   fill
-                  className="object-cover"
+                  className="object-contain"
                 />
               </div>
             ))}
