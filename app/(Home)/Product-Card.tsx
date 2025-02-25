@@ -38,7 +38,7 @@ export default function ProductCard({ product }: { product: Product }) {
             </div>
           </div>
           <div className="p-4">
-            <h3 className="font-medium">{product.name}</h3>
+            <h3 className="font-normal">{product.name}</h3>
             <p className="text-lg font-bold">${product.price}</p>
           </div>
         </CardContent>

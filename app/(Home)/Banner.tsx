@@ -25,22 +25,21 @@ function Banner() {
     <div className="mx-auto max-w-screen-xl my-5">
     <Carousel className="rounded-lg">
       {bannerSlides.map((slide, index) => (
-        <div key={index} className="relative aspect-[20/9] overflow-hidden rounded-lg">
+        <div key={index} className="relative md:py-80 py-36 overflow-hidden rounded-lg">
           <Image
             src={slide.image || "/placeholder.svg"}
             alt={slide.title}
             fill
-            className="object-cover"
+            className="object-cover object-top"
             priority={index === 0}
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent" />
-          <div className="absolute inset-0 flex items-center p-8">
+          {/* <div className="absolute inset-0 flex items-center justify-center p-8">
             <div className="text-white">
-              <h1 className="text-4xl font-bold mb-4">{slide.title}</h1>
-              <p className="mb-4">{slide.description}</p>
+              <h1 className="md:text-4xl text-xl font-bold mb-4">{slide.title}</h1>
               <Button className="bg-white text-black hover:bg-white/90">Shop Now</Button>
             </div>
-          </div>
+          </div> */}
         </div>
       ))}
     </Carousel>
