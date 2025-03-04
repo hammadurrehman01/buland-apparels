@@ -1,6 +1,7 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
+  "/categories/products/product-page/page": "app/categories/products/product-page/page.js",
+  "/categories/[category]/page": "app/categories/[category]/page.js",
   "/(Home)/page": "app/(Home)/page.js",
-  "/categories/page": "app/categories/page.js",
-  "/categories/[category]/page": "app/categories/[category]/page.js"
+  "/categories/page": "app/categories/page.js"
 }
