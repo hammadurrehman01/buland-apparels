@@ -3,5 +3,6 @@
   "/categories/products/product-page/page": "app/categories/products/product-page/page.js",
   "/categories/[category]/page": "app/categories/[category]/page.js",
   "/(Home)/page": "app/(Home)/page.js",
-  "/categories/page": "app/categories/page.js"
+  "/categories/page": "app/categories/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js"
 }
