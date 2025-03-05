@@ -12,9 +12,9 @@ export function ProductGrid() {
   const [selectedProduct, setSelectedProduct] = useState<any>(null)
 
   return (
-    <div className="space-y-6 mt-32">
+    <div className="space-y-6 mt-auto mx-auto max-w-screen-xl">
       <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
-        <h1 className="text-3xl font-bold capitalize">t-shirts</h1>
+        <h1 className="text-4xl font-extrabold capitalize">t-shirts</h1>
         <div className="flex flex-wrap gap-4">
           <Select defaultValue="All Collections">
             <SelectTrigger className="w-[180px]">

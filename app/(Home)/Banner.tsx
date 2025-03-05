@@ -22,7 +22,7 @@ function Banner() {
         },
       ]
   return (
-    <div className="mx-auto max-w-screen-xl lg:mt-32 mt-10 mb-7 ">
+    <div className="mx-auto max-w-screen-xl mt-5 ">
     <Carousel className="rounded-lg">
       {bannerSlides.map((slide, index) => (
         <div key={index} className="relative md:py-80 py-36 overflow-hidden rounded-lg">

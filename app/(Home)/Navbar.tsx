@@ -68,7 +68,7 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "fixed top-0  z-50 w-full transition-all duration-300",
+        "sticky top-0 z-50 w-full transition-all duration-300",
         scrolled
           ? "bg-black text-white h-24 shadow-md dark:bg-zinc-900"
           : "bg-white text-black h-28 dark:bg-black dark:text-white",
@@ -93,7 +93,7 @@ export function Navbar() {
             </div>
             <span
               className={cn(
-                "text-xl font-extrabold tracking-tighter uppercase transition-all",
+                "text-2xl font-extrabold tracking-tighter uppercase transition-all",
                 scrolled ? "text-white" : "",
               )}
             >
@@ -219,7 +219,7 @@ export function Navbar() {
                 className={cn("object-contain", darkMode ? "invert" : "")}
               />
             </div>
-            <span className="text-2xl font-extrabold tracking-tighter uppercase ">BULAND</span>
+            <span className="text-3xl font-black tracking-tighter uppercase ">BULAND</span>
           </div>
 
           {/* Close button */}
