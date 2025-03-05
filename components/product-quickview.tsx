@@ -31,7 +31,7 @@ export function ProductQuickView({ product }: { product: any }) {
           <p className="text-xl font-semibold">${product.price}</p>
           <p className="text-muted-foreground">{product.description}</p>
           <Button asChild className="mt-auto">
-            <Link href={`/products/${product.id}`}>View Full Details</Link>
+            <Link href={`/products/${product.name.toLowerCase().replace(/\s+/g, '-')}`}>View Full Details</Link>
           </Button>
         </div>
       </div>
