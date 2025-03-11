@@ -1,4 +1,4 @@
-import { ProductDetails } from "@/components/product-details"
+import { ProductDetails } from "@/components/product-details";
 
 
 
