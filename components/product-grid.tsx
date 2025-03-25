@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { X, Filter, ChevronDown, Search, ShoppingBag } from 'lucide-react'
+import { X, Filter, Search, ShoppingBag } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Dialog, DialogContent, DialogTitle, DialogDescription, DialogClose } from "@/components/ui/dialog"
 import { Slider } from "@/components/ui/slider"
@@ -136,7 +136,7 @@ const sortOptions = [
 ]
 
 const sizes = ["XS", "S", "M", "L", "XL", "XXL"]
-const colors = ["Black", "White", "Red", "Grey", "Green", "Blue"]
+// const colors = ["Black", "White", "Red", "Grey", "Green", "Blue"]
 
 export default function ProductGrid() {
   const [selectedProduct, setSelectedProduct] = useState<null | typeof products[0]>(null)
@@ -719,7 +719,7 @@ export default function ProductGrid() {
                   <div className="flex flex-col items-center justify-center py-16 text-center">
                     <div className="bg-zinc-200 dark:bg-zinc-900/60 p-8 rounded-lg max-w-md backdrop-blur-sm border border-zinc-800">
                       <h3 className="text-xl font-bold mb-2">No products found</h3>
-                      <p className="text-zinc-400 mb-6">Try adjusting your filters to find what you're looking for.</p>
+                      <p className="text-zinc-400 mb-6">Try adjusting your filters to find what you&apos;re looking for.</p>
                       <Button onClick={resetFilters} className="bg-red-600 hover:bg-red-700">Reset Filters</Button>
                     </div>
                   </div>
@@ -800,7 +800,7 @@ export default function ProductGrid() {
                   <div className="flex flex-col items-center justify-center py-16 text-center">
                     <div className="bg-zinc-900/60 p-8 rounded-lg max-w-md backdrop-blur-sm border border-zinc-800">
                       <h3 className="text-xl font-bold mb-2">No products found</h3>
-                      <p className="text-zinc-400 mb-6">Try adjusting your filters to find what you're looking for.</p>
+                      <p className="text-zinc-400 mb-6">Try adjusting your filters to find what you&apos;re looking for.</p>
                       <Button onClick={resetFilters} className="bg-red-600 hover:bg-red-700">Reset Filters</Button>
                     </div>
                   </div>
