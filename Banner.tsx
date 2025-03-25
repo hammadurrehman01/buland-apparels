@@ -1,11 +1,12 @@
 "use client"
 
-import React, { useState, useEffect } from "react"
+import { useState, useEffect } from "react"
 import Image from "next/image"
-import { ArrowRight, ChevronLeft, ChevronRight, Truck, TrendingUp, Shield, BoxIcon } from "lucide-react"
+import { ArrowRight, ChevronLeft, ChevronRight, Truck, TrendingUp, Shield } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
+// Collection data
 const collections = [
   {
     id: 1,
@@ -21,6 +22,7 @@ const collections = [
   },
 ]
 
+// Features data
 const features = [
   {
     icon: Truck,
@@ -33,7 +35,27 @@ const features = [
     description: "100% secure transactions",
   },
   {
-    icon: BoxIcon,
+    icon: () => (
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="h-6 w-6"
+      >
+        <path d="M21 10V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l2-1.14" />
+        <path d="m7.5 4.27 9 5.15" />
+        <polyline points="3.29 7 12 12 20.71 7" />
+        <line x1="12" x2="12" y1="22" y2="12" />
+        <circle cx="18.5" cy="15.5" r="2.5" />
+        <path d="M20.27 17.27 22 19" />
+      </svg>
+    ),
     title: "Easy Returns",
     description: "30-day return policy",
   },
@@ -85,7 +107,7 @@ export default function BulandBanner() {
   }, [currentSlide, isHovering])
 
   return (
-    <div className="mx-auto lg:max-w-screen-xl xl:max-w-screen-2xl  overflow-hidden">
+    <div className="mx-auto max-w-screen-2xl overflow-hidden">
       {/* Hero Banner Section */}
       <section className="relative">
         {/* Animated background elements */}
@@ -95,7 +117,7 @@ export default function BulandBanner() {
           <div className="animate-float-reverse absolute bottom-20 left-1/3 w-40 h-40 rounded-full bg-red-800/5"></div>
         </div>
 
-
+ 
 
         <div className="grid grid-cols-1 lg:grid-cols-2 my-5 relative z-10">
           {/* Text Content */}
@@ -228,20 +250,24 @@ export default function BulandBanner() {
       </section>
 
       {/* Features Section */}
-      <section className="border-y  relative overflow-hidden">
+      <section className="border-y bg-white relative overflow-hidden">
         <div className="container py-8 md:py-12 relative z-10">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="flex items-center gap-4 group hover:-translate-y-2 transition-all duration-300 animate-slide-in-stagger p-4 rounded-lg "
+                className="flex items-center gap-4 group hover:-translate-y-2 transition-all duration-300 animate-slide-in-stagger hover:bg-red-50 p-4 rounded-lg"
                 style={{ animationDelay: `${(index + 1) * 150}ms` }}
               >
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-red-800/10 group-hover:bg-red-800/20 transition-all duration-300 group-hover:scale-110">
-                  {feature.icon && React.createElement(feature.icon, { className: "h-6 w-6 text-red-800" })}
+                  {typeof feature.icon === "function" ? (
+                    <feature.icon className="h-6 w-6 text-red-800" />
+                  ) : (
+                    <feature.icon className="h-6 w-6 text-red-800" />
+                  )}
                 </div>
                 <div>
-                  <h3 className="font-medium ">{feature.title}</h3>
+                  <h3 className="font-medium text-gray-900">{feature.title}</h3>
                   <p className="text-sm text-gray-600">{feature.description}</p>
                 </div>
               </div>
