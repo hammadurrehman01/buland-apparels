@@ -229,7 +229,7 @@ export default function BulandBanner() {
 
       {/* Features Section */}
       <section className="border-y  relative overflow-hidden">
-        <div className="container py-8 md:py-12 relative z-10">
+        <div className="mx-auto max-w-screen-xl py-8 md:py-12 relative z-10">
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {features.map((feature, index) => (
               <div
