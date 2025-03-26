@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans as FontSans } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "./(Home)/Navbar";
 import { cn } from "@/lib/utils";
+import Footer from "./(Home)/Footer";
 
 // const montserrat = Montserrat({
 //   variable: "--font-montserrat",
@@ -35,6 +36,7 @@ export default function RootLayout({
       >
         <Navbar/>
         {children}
+        <Footer/>
       </body>
     </html>
   );

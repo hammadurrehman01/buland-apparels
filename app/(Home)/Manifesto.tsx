@@ -9,7 +9,6 @@ export default function Manifesto() {
   const [activeIndex, setActiveIndex] = useState(0)
   const [isHovering, setIsHovering] = useState(false)
 
-  // Auto-rotate through manifesto points
   useEffect(() => {
     if (isHovering) return
 

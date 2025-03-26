@@ -15,7 +15,7 @@ const navItems = [
   { name: "BESTSELLERS", href: "/best-sellers" },
   { name: "COLLABS", href: "/collaborations" },
   { name: "Login", href: "/login" },
-  { name: "Sign-UP", href: "/signup" },
+  { name: "Sign UP", href: "/signup" },
 ]
 
 export function Navbar() {
