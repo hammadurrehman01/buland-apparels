@@ -54,7 +54,6 @@ export default function Footer() {
         { name: "My Account", href: "#" },
         { name: "Order History", href: "#" },
         { name: "Wishlist", href: "#" },
-        { name: "Track Package", href: "#" },
         { name: "Returns", href: "#" },
       ],
     },
@@ -63,8 +62,6 @@ export default function Footer() {
       links: [
         { name: "About Buland", href: "#" },
         { name: "Our Manifesto", href: "#" },
-        { name: "Sustainability", href: "#" },
-        { name: "Size Guide", href: "#" },
         { name: "FAQ", href: "#" },
       ],
     },
@@ -101,7 +98,7 @@ export default function Footer() {
   ]
 
   return (
-    <footer className=" relative overflow-hidden">
+    <footer className=" relative overflow-hidden mx-auto max-w-screen-2xl">
       {/* Diagonal top divider */}
       <div
         className="absolute top-0 left-0 w-full h-16 "
@@ -120,8 +117,8 @@ export default function Footer() {
       />
 
       {/* E-commerce features section */}
-      <div className="relative z-10 border-b border-zinc-800">
-        <div className="container px-4 md:px-6 py-10 md:py-12">
+      <div className="relative mx-auto max-w-screen-xl z-10 border-b border-zinc-800">
+        <div className=" px-4 md:px-6 py-10 md:py-12">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {ecommerceFeatures.map((feature, index) => (
               <div key={index} className="flex items-start space-x-4">
