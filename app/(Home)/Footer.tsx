@@ -189,7 +189,7 @@ export default function Footer() {
               </p>
 
               <div className="flex space-x-4 mb-6">
-                <Link href="#" className="text-zinc-400 flex gap-2 items-center hover:text-red-600 transition-colors">
+                <Link href="https://www.instagram.com/bulandapparel" target="_blank" className="text-zinc-400 flex gap-2 items-center hover:text-red-600 transition-colors">
                   <Instagram className="h-5 w-5" />
                   bulandapparels
                 </Link>

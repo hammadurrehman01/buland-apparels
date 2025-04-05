@@ -14,7 +14,7 @@ const products = [
     id: 1,
     name: "Dystopia Graphic Tee",
     slug: "dystopia-graphic-tee",
-    image: "/product-1.jpg",
+    image: "/products/shirt-product-1.png",
     price: 49.99,
     salePrice: 39.99,
     discount: 20,
@@ -27,7 +27,7 @@ const products = [
     id: 2,
     name: "Minimalist Logo Shirt",
     slug: "minimalist-logo-shirt",
-    image: "/product-2.jpg",
+    image: "/products/shirt-product-2.png",
     price: 59.99,
     salePrice: 44.99,
     discount: 25,
@@ -40,7 +40,7 @@ const products = [
     id: 3,
     name: "Urban Chaos Tee",
     slug: "urban-chaos-tee",
-    image: "/product-3.jpg",
+    image: "/products/shirt-product-3.png",
     price: 45.99,
     salePrice: 36.79,
     discount: 20,
@@ -53,7 +53,7 @@ const products = [
     id: 4,
     name: "Structured Collar Shirt",
     slug: "structured-collar-shirt",
-    image: "/product-4.jpg",
+    image: "/products/shirt-product-4.png",
     price: 69.99,
     salePrice: 48.99,
     discount: 30,
@@ -66,7 +66,7 @@ const products = [
     id: 5,
     name: "Dystopia Oversized Tee",
     slug: "dystopia-oversized-tee",
-    image: "/product-5.jpg",
+    image: "/products/shirt-product-5.png",
     price: 54.99,
     salePrice: 43.99,
     discount: 20,
@@ -79,7 +79,7 @@ const products = [
     id: 6,
     name: "Minimal Stripe Shirt",
     slug: "minimal-stripe-shirt",
-    image: "/product-6.jpg",
+    image: "/products/shirt-product-6.png",
     price: 64.99,
     salePrice: 51.99,
     discount: 20,
@@ -90,41 +90,48 @@ const products = [
   },
 ]
 
-// Timer calculation
-const calculateTimeLeft = () => {
-  // Set end date to 7 days from now
-  const endDate = new Date()
-  endDate.setDate(endDate.getDate() + 7)
 
-  const difference = endDate.getTime() - new Date().getTime()
-
-  if (difference <= 0) {
-    return { days: 0, hours: 0, minutes: 0, seconds: 0 }
-  }
-
-  return {
-    days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-    hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-    minutes: Math.floor((difference / 1000 / 60) % 60),
-    seconds: Math.floor((difference / 1000) % 60),
-  }
-}
 
 export default function ProductSlider() {
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft())
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isAnimating, setIsAnimating] = useState(false)
   const [hoveredProduct, setHoveredProduct] = useState<number | null>(null)
   const sliderRef = useRef<HTMLDivElement>(null)
+  const [timeLeft, setTimeLeft] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
 
-  // Update countdown timer
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setTimeLeft(calculateTimeLeft())
-    }, 1000)
+    // Set end date to 7 days from now, only once
+    const endDate = new Date();
+    endDate.setDate(endDate.getDate() + 7);
 
-    return () => clearTimeout(timer)
-  })
+    const calculateTimeLeft = () => {
+      const difference = endDate.getTime() - new Date().getTime();
+
+      if (difference <= 0) {
+        return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+      }
+
+      return {
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((difference / (1000 * 60)) % 60),
+        seconds: Math.floor((difference / 1000) % 60),
+      };
+    };
+
+    setTimeLeft(calculateTimeLeft()); // Initial update
+
+    const timer = setInterval(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
 
   // Calculate visible products based on screen size
   const getVisibleCount = () => {
@@ -178,24 +185,26 @@ export default function ProductSlider() {
               <p className="font-medium">Sale Ends In:</p>
             </div>
             <div className="flex gap-3 text-center">
-              <div className="bg-gray-100 dark:bg-gray-950 rounded-lg p-2 w-16">
+              <div className="bg-gray-100 dark:bg-zinc-900 rounded-lg p-2 w-16">
                 <div className="text-2xl font-bold">{timeLeft.days}</div>
                 <div className="text-xs text-gray-500">Days</div>
               </div>
-              <div className="bg-gray-100 dark:bg-gray-950 rounded-lg p-2 w-16">
+              <div className="bg-gray-100 dark:bg-zinc-900 rounded-lg p-2 w-16">
                 <div className="text-2xl font-bold">{timeLeft.hours}</div>
                 <div className="text-xs text-gray-500">Hours</div>
               </div>
-              <div className="bg-gray-100 dark:bg-gray-950 rounded-lg p-2 w-16">
+              <div className="bg-gray-100 dark:bg-zinc-900 rounded-lg p-2 w-16">
                 <div className="text-2xl font-bold">{timeLeft.minutes}</div>
                 <div className="text-xs text-gray-500">Mins</div>
               </div>
-              <div className="bg-gray-100 dark:bg-gray-950 rounded-lg p-2 w-16">
+              <div className="bg-gray-100 dark:bg-zinc-900 rounded-lg p-2 w-16">
                 <div className="text-2xl font-bold animate-pulse-subtle">{timeLeft.seconds}</div>
                 <div className="text-xs text-gray-500">Secs</div>
               </div>
             </div>
           </div>
+
+
         </div>
 
         {/* Product Slider */}
@@ -220,7 +229,7 @@ export default function ProductSlider() {
                           src={product.image || "/placeholder.svg"}
                           alt={product.name}
                           fill
-                          className="object-cover transition-transform duration-700 group-hover:scale-105"
+                          className="object-contain transition-transform duration-700 group-hover:scale-105"
                         />
 
                         {/* Discount badge */}

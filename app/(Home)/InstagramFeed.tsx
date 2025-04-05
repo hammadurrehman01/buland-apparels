@@ -5,12 +5,13 @@ import Image from "next/image"
 import { Heart, MessageCircle, Instagram, ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
+import Link from "next/link"
 
 // Instagram post data
 const instagramPosts = [
   {
     id: 1,
-    image: "/instagram-1.jpg",
+    image: "/product-3.png",
     likes: 342,
     comments: 18,
     caption: "Our new Dystopia Collection dropping this weekend. #BulandStyle #DystopiaCollection",
@@ -18,7 +19,7 @@ const instagramPosts = [
   },
   {
     id: 2,
-    image: "/instagram-2.jpg",
+    image: "/category/hoodie-category.png",
     likes: 289,
     comments: 24,
     caption: "Minimalist elegance from our Props Vol 1 Collection. #BulandStyle #PropsVol1",
@@ -26,7 +27,7 @@ const instagramPosts = [
   },
   {
     id: 3,
-    image: "/instagram-3.jpg",
+    image: "/motorsport-1.png",
     likes: 512,
     comments: 36,
     caption: "Behind the scenes at our latest photoshoot. #BulandStyle #BehindTheScenes",
@@ -34,7 +35,7 @@ const instagramPosts = [
   },
   {
     id: 4,
-    image: "/instagram-4.jpg",
+    image: "/motorsport-2.png",
     likes: 423,
     comments: 29,
     caption: "Street style inspiration featuring our Dystopia tee. #BulandStyle #StreetStyle",
@@ -42,7 +43,7 @@ const instagramPosts = [
   },
   {
     id: 5,
-    image: "/instagram-5.jpg",
+    image: "/products/shirt-product-7.png",
     likes: 376,
     comments: 21,
     caption: "Details matter. Close-up of our premium stitching. #BulandStyle #QualityCraftsmanship",
@@ -50,7 +51,7 @@ const instagramPosts = [
   },
   {
     id: 6,
-    image: "/instagram-6.jpg",
+    image: "/product-2.png",
     likes: 298,
     comments: 15,
     caption: "Weekend vibes in our Props Vol 1 shirt. #BulandStyle #WeekendOutfit",
@@ -66,7 +67,7 @@ export default function InstagramFeed() {
 
   return (
     <section className="py-16 md:py-24 overflow-hidden">
-      <div className="container">
+      <div className="mx-auto max-w-screen-2xl">
         <div className="flex flex-col items-center justify-center text-center mb-8">
           <div className="flex items-center gap-2 mb-3">
             <Instagram className="h-6 w-6 text-red-800" />
@@ -75,7 +76,7 @@ export default function InstagramFeed() {
             </h2>
           </div>
           <p className="mt-2 max-w-[700px] text-muted-foreground md:text-xl animate-fade-in animation-delay-200">
-            Get inspired by our community on Instagram <span className="font-medium text-red-800">@buland_style</span>
+            Get inspired by our community on Instagram <Link href={'https://www.instagram.com/bulandapparel'} target="_blank" className="font-medium text-red-800">@bulandapparels</Link>
           </p>
         </div>
 
@@ -84,7 +85,7 @@ export default function InstagramFeed() {
           <Button
             variant={activeFilter === null ? "default" : "outline"}
             size="sm"
-            className={cn("rounded-full", activeFilter === null ? "bg-red-800 hover:bg-red-900" : "hover:bg-red-50")}
+            className={cn("rounded-full", activeFilter === null ? "bg-red-800 hover:bg-red-900 text-zinc-50" : "hover:bg-red-50 hover:text-red-950")}
             onClick={() => setActiveFilter(null)}
           >
             All
@@ -94,7 +95,7 @@ export default function InstagramFeed() {
             size="sm"
             className={cn(
               "rounded-full",
-              activeFilter === "outfit" ? "bg-red-800 hover:bg-red-900" : "hover:bg-red-50",
+              activeFilter === "outfit" ? "bg-red-800 hover:bg-red-900 text-zinc-50" : "hover:bg-red-50 hover:text-red-950",
             )}
             onClick={() => setActiveFilter("outfit")}
           >
@@ -105,7 +106,7 @@ export default function InstagramFeed() {
             size="sm"
             className={cn(
               "rounded-full",
-              activeFilter === "product" ? "bg-red-800 hover:bg-red-900" : "hover:bg-red-50",
+              activeFilter === "product" ? "bg-red-800 hover:bg-red-900 text-zinc-50" : "hover:bg-red-50 hover:text-red-950",
             )}
             onClick={() => setActiveFilter("product")}
           >
@@ -116,7 +117,7 @@ export default function InstagramFeed() {
             size="sm"
             className={cn(
               "rounded-full",
-              activeFilter === "lifestyle" ? "bg-red-800 hover:bg-red-900" : "hover:bg-red-50",
+              activeFilter === "lifestyle" ? "bg-red-800 hover:bg-red-900 text-zinc-50" : "hover:bg-red-50 hover:text-red-950",
             )}
             onClick={() => setActiveFilter("lifestyle")}
           >
@@ -182,10 +183,10 @@ export default function InstagramFeed() {
 
         {/* Follow button */}
         <div className="flex justify-center mt-10">
-          <Button className="rounded-full bg-gradient-to-r from-purple-600 to-red-600 hover:from-purple-700 hover:to-red-700 text-white px-8 group">
+          <Link href={'https://www.instagram.com/bulandapparel'} target="_blank" className="flex  items-center py-2 rounded-full bg-gradient-to-r from-purple-600 to-red-600 hover:from-purple-700 hover:to-red-700 text-white px-8 group">
             <Instagram className="h-4 w-4 mr-2 group-hover:rotate-12 transition-transform" />
-            Follow @buland_style
-          </Button>
+            Follow @bulandapparels
+          </Link>
         </div>
       </div>
     </section>

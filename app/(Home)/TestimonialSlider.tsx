@@ -10,43 +10,43 @@ import { cn } from "@/lib/utils"
 const testimonials = [
   {
     id: 1,
-    name: "Alex Johnson",
-    avatar: "/testimonial-1.jpg",
+    name: "Usman Raza",
+    avatar: "/testimonial-2.png",
     rating: 5,
-    text: "The Dystopia Collection from Buland is exactly what I've been looking for. The quality is exceptional and the designs are truly unique. I've received so many compliments on my t-shirts!",
-    location: "New York, USA",
+    text: "Buland hoodies are next level! Super comfy and the prints don’t fade even after multiple washes. Definitely gonna buy more!",
+    location: "Lahore, PK",
   },
   {
     id: 2,
-    name: "Sarah Williams",
-    avatar: "/testimonial-2.jpg",
+    name: "Ayesha Malik",
+    avatar: "/testimonial-2.png",
     rating: 5,
-    text: "I'm obsessed with the Props Vol 1 Collection. The minimalist designs with subtle details make these pieces perfect for both casual and semi-formal occasions. Buland has become my go-to brand.",
-    location: "London, UK",
+    text: "Ordered a couple of full-sleeve shirts, and I’m in love! The fabric is soft, and the fit is just perfect. Highly recommend!",
+    location: "Karachi, PK",
   },
   {
     id: 3,
-    name: "Michael Chen",
-    avatar: "/testimonial-3.jpg",
+    name: "Hassan Javed",
+    avatar: "/testimonial-2.png",
     rating: 5,
-    text: "The fit and fabric quality of Buland's shirts are unmatched. I've tried many premium brands, but nothing compares to how comfortable and durable these are. Worth every penny!",
-    location: "Toronto, Canada",
+    text: "The quality of these t-shirts is 🔥. The prints are dope, and they don’t feel cheap at all. Best online purchase I’ve made in a while!",
+    location: "Rawalpindi, PK",
   },
   {
     id: 4,
-    name: "Priya Sharma",
-    avatar: "/testimonial-4.jpg",
+    name: "Zainab Shah",
+    avatar: "/testimonial-2.png",
     rating: 5,
-    text: "Buland's Dystopia Collection perfectly captures the edgy streetwear aesthetic I love. The attention to detail in the designs is impressive, and the shirts hold up well after multiple washes.",
-    location: "Mumbai, India",
+    text: "I was looking for some cool oversized hoodies, and Buland did not disappoint! Super cozy and stylish—love the designs!",
+    location: "Faisalabad, PK",
   },
   {
     id: 5,
-    name: "David Rodriguez",
-    avatar: "/testimonial-5.jpg",
+    name: "Ali Haider",
+    avatar: "/testimonial-2.png",
     rating: 4,
-    text: "The unique designs from Buland always get me compliments. The Props Vol 1 shirts have become staples in my wardrobe. The only reason for 4 stars is I wish they had more color options!",
-    location: "Barcelona, Spain",
+    text: "Honestly, best streetwear brand in Pakistan. The fabric, the prints, the fit—everything is on point! Definitely coming back for more.",
+    location: "Multan, PK",
   },
 ]
 
@@ -111,7 +111,7 @@ export default function TestimonialSlider() {
 
   return (
     <section className="py-16 md:py-24 bg-muted/30 overflow-hidden">
-      <div className="container">
+      <div className="mx-auto max-w-screen-2xl">
         <div className="flex flex-col items-center justify-center text-center mb-12">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl animate-fade-in">
             What Our Customers Say
@@ -149,13 +149,13 @@ export default function TestimonialSlider() {
               >
                 <div className="flex flex-col md:flex-row items-start md:items-center gap-6">
                   <div className="flex-shrink-0">
-                    <div className="h-16 w-16 md:h-20 md:w-20 rounded-full overflow-hidden border-2 border-red-800/20">
+                    <div className="h-12 w-12 md:h-16 md:w-16 rounded-full overflow-hidden border-2 border-red-800/20">
                       <Image
                         src={testimonial.avatar || "/placeholder.svg"}
                         alt={testimonial.name}
-                        width={100}
-                        height={100}
-                        className="h-full w-full object-cover"
+                        width={50}
+                        height={50}
+                        className="h-full w-full object-contain"
                       />
                     </div>
                   </div>
@@ -194,7 +194,7 @@ export default function TestimonialSlider() {
             <Button
               variant="outline"
               size="icon"
-              className="rounded-full bg-white/80 backdrop-blur-sm border-white/40 text-black hover:bg-white transition-all duration-300 hover:scale-110 shadow-lg pointer-events-auto"
+              className="rounded-full dark:bg-black/80 bg-white/80 backdrop-blur-sm border-white/40 text-black dark:text-white hover:bg-white transition-all duration-300 hover:scale-110 shadow-lg pointer-events-auto"
               onClick={prevSlide}
             >
               <ChevronLeft className="h-5 w-5" />
@@ -203,7 +203,7 @@ export default function TestimonialSlider() {
             <Button
               variant="outline"
               size="icon"
-              className="rounded-full bg-white/80 backdrop-blur-sm border-white/40 text-black hover:bg-white transition-all duration-300 hover:scale-110 shadow-lg pointer-events-auto"
+              className="rounded-full dark:bg-black/80 bg-white/80 backdrop-blur-sm border-white/40 text-black dark:text-white hover:bg-white transition-all duration-300 hover:scale-110 shadow-lg pointer-events-auto"
               onClick={nextSlide}
             >
               <ChevronRight className="h-5 w-5" />
