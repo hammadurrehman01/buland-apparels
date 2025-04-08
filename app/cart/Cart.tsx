@@ -16,8 +16,8 @@ const initialCartItems = [
     name: "Dystopia Graphic Tee",
     slug: "dystopia-graphic-tee",
     image: "/products/shirt-product-4.png",
-    price: 3999,
-    originalPrice: 4999,
+    price: 1500,
+    originalPrice: 1800,
     color: "Black",
     size: "M",
     quantity: 1,
@@ -25,11 +25,11 @@ const initialCartItems = [
   },
   {
     id: 2,
-    name: "Minimalist Logo Shirt",
-    slug: "minimalist-logo-shirt",
+    name: "Brave Tee",
+    slug: "brave-tee",
     image: "/products/shirt-product-5.png",
-    price: 4499,
-    originalPrice: 5999,
+    price: 2000,
+    originalPrice: 2199,
     color: "White",
     size: "L",
     quantity: 2,
@@ -44,32 +44,32 @@ const recommendedProducts = [
     name: "Urban Chaos Tee",
     slug: "urban-chaos-tee",
     image: "/products/shirt-product-3.png",
-    price: 3499,
+    price: 1800,
     collection: "Dystopia Collection",
   },
   {
     id: 2,
-    name: "Structured Collar Shirt",
-    slug: "structured-collar-shirt",
+    name: "Dreams Anxiety Tee",
+    slug: "dreams-anxiety-tee",
     image: "/products/shirt-product-2.png",
-    price: 3999,
-    collection: "Props Vol 1",
+    price: 1300,
+    collection: "Dystopia Collection",
   },
   {
     id: 3,
-    name: "Dystopia Oversized Tee",
-    slug: "dystopia-oversized-tee",
+    name: "Social Anxiety Tee",
+    slug: "social-anxiety-tee",
     image: "/products/shirt-product-1.png",
-    price: 4499,
+    price: 1300,
     collection: "Dystopia Collection",
   },
   {
     id: 4,
-    name: "Minimal Stripe Shirt",
-    slug: "minimal-stripe-shirt",
+    name: "Promise Tee",
+    slug: "promise-tee",
     image: "/products/shirt-product-7.png",
-    price: 4999,
-    collection: "Props Vol 1",
+    price: 1200,
+    collection: "Dystopia Collection",
   },
 ]
 
@@ -77,26 +77,26 @@ const recommendedProducts = [
 const recentlyViewedProducts = [
   {
     id: 1,
-    name: "Classic Fit Tee",
-    slug: "classic-fit-tee",
+    name: "NSX Hoodie",
+    slug: "nsx-hoodie",
     image: "/motorsport-1.png",
-    price: 3799,
+    price: 3000,
     collection: "Motorsport Collection",
   },
   {
     id: 2,
-    name: "Premium Cotton Shirt",
-    slug: "premium-cotton-shirt",
+    name: "Aventador Hoodie",
+    slug: "aventador-hoodie",
     image: "/motorsport-2.png",
-    price: 4099,
+    price: 3199,
     collection: "Motorsport Collection",
   },
   {
     id: 3,
-    name: "Graphic Print Tee",
-    slug: "graphic-print-tee",
+    name: "Television Killed Your Vision Tee",
+    slug: "television-killed-your-vision-tee",
     image: "/props-1.png",
-    price: 4399,
+    price: 2000,
     collection: "Props Vol 1",
   },
   {
@@ -372,10 +372,12 @@ export default function CartPage() {
               </div>
 
               {/* Checkout Button */}
+              <Link href={'/checkout'}>
               <Button className="w-full mt-6 bg-red-800 hover:bg-red-900 text-white" size="lg">
                 <CreditCard className="h-4 w-4 mr-2" />
                 Proceed to Checkout
               </Button>
+              </Link>
 
               {/* Trust Badges */}
               <div className="mt-6 grid grid-cols-3 gap-2 text-center text-xs text-muted-foreground">

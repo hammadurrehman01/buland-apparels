@@ -39,11 +39,11 @@ const orderDetails = {
     method: "Standard Shipping",
     cost: 999,
     address: "123 Main Street, Karachi, 75300",
-    estimatedDelivery: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000).toLocaleDateString("en-US", {
-      month: "long",
-      day: "numeric",
-      year: "numeric",
-    }),
+    // estimatedDelivery: new Date(Date.now() + 5 * 24 * 60 * 60 * 1000).toLocaleDateString("en-US", {
+    //   month: "long",
+    //   day: "numeric",
+    //   year: "numeric",
+    // }),
   },
   payment: {
     method: "Credit Card",
@@ -90,7 +90,7 @@ export default function OrderConfirmationPage() {
             <CheckCircle2 className="h-8 w-8 text-green-600" />
           </div>
           <h1 className="text-3xl font-bold mb-2">Order Confirmed!</h1>
-          <p className="text-gray-600">
+          <p className="text-muted-foreground">
             Thank you for your purchase. Your order has been received and is being processed.
           </p>
         </div>
@@ -101,7 +101,7 @@ export default function OrderConfirmationPage() {
               <h2 className="text-lg font-semibold">Order #{orderDetails.orderNumber}</h2>
               <p className="text-gray-500">Placed on {orderDetails.date}</p>
             </div>
-            <div className="mt-4 md:mt-0 flex gap-2">
+            {/* <div className="mt-4 md:mt-0 flex gap-2">
               <Button variant="outline" size="sm" className="flex items-center">
                 <Printer className="h-4 w-4 mr-2" />
                 Print Receipt
@@ -110,7 +110,7 @@ export default function OrderConfirmationPage() {
                 <Package className="h-4 w-4 mr-2" />
                 Track Order
               </Button>
-            </div>
+            </div> */}
           </div>
 
           <Separator className="mb-6" />
@@ -118,21 +118,21 @@ export default function OrderConfirmationPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
             <div>
               <h3 className="font-semibold mb-2">Shipping Information</h3>
-              <p className="text-gray-600">{orderDetails.shipping.address}</p>
-              <p className="text-gray-600 mt-2">
+              <p className="text-muted-foreground">{orderDetails.shipping.address}</p>
+              <p className="text-muted-foreground mt-2">
                 <span className="font-medium">Method:</span> {orderDetails.shipping.method}
               </p>
-              <p className="text-gray-600">
-                <span className="font-medium">Estimated Delivery:</span> {orderDetails.shipping.estimatedDelivery}
+              <p className="text-muted-foreground">
+                <span className="font-medium">Estimated Delivery: 5 to 7 business days</span> 
               </p>
             </div>
             <div>
               <h3 className="font-semibold mb-2">Payment Information</h3>
-              <p className="text-gray-600">
+              <p className="text-muted-foreground">
                 <span className="font-medium">Method:</span> {orderDetails.payment.method}
               </p>
               {orderDetails.payment.last4 && (
-                <p className="text-gray-600">
+                <p className="text-muted-foreground">
                   <span className="font-medium">Card:</span> •••• {orderDetails.payment.last4}
                 </p>
               )}
@@ -166,7 +166,7 @@ export default function OrderConfirmationPage() {
 
           <div className="space-y-2 text-sm">
             <div className="flex justify-between">
-              <span className="text-gray-600">Subtotal</span>
+              <span className="text-muted-foreground">Subtotal</span>
               <span>₨ {formatPrice(orderDetails.subtotal)}</span>
             </div>
             <div className="flex justify-between text-green-600">
@@ -174,11 +174,11 @@ export default function OrderConfirmationPage() {
               <span>-₨ {formatPrice(orderDetails.discount)}</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-gray-600">Shipping</span>
+              <span className="text-muted-foreground">Shipping</span>
               <span>₨ {formatPrice(orderDetails.shipping.cost)}</span>
             </div>
             <div className="flex justify-between">
-              <span className="text-gray-600">Tax</span>
+              <span className="text-muted-foreground">Tax</span>
               <span>₨ {formatPrice(orderDetails.tax)}</span>
             </div>
             <div className="flex justify-between text-lg font-semibold pt-2">
@@ -197,7 +197,7 @@ export default function OrderConfirmationPage() {
               </div>
               <div>
                 <h3 className="font-medium">Order Processing</h3>
-                <p className="text-gray-600 text-sm">
+                <p className="text-muted-foreground text-sm">
                   Your order is being processed and prepared for shipping. You'll receive an email confirmation shortly.
                 </p>
               </div>
@@ -208,7 +208,7 @@ export default function OrderConfirmationPage() {
               </div>
               <div>
                 <h3 className="font-medium">Shipping</h3>
-                <p className="text-gray-600 text-sm">
+                <p className="text-muted-foreground text-sm">
                   Once your order ships, you'll receive a tracking number via email to monitor your delivery.
                 </p>
               </div>
@@ -219,8 +219,8 @@ export default function OrderConfirmationPage() {
               </div>
               <div>
                 <h3 className="font-medium">Delivery</h3>
-                <p className="text-gray-600 text-sm">
-                  Your order should arrive by {orderDetails.shipping.estimatedDelivery}. Enjoy your new Buland items!
+                <p className="text-muted-foreground text-sm">
+                  Your order should arrive in  5 to 7 business days. Enjoy your new Buland items!
                 </p>
               </div>
             </div>
