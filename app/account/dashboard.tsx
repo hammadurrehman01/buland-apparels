@@ -38,7 +38,7 @@ export default function DashboardPage() {
     <div className="bg-white dark:bg-zinc-950">
       <DashboardHeader activeSection={activeSection} navigationItems={navigationItems} userData={userData} />
 
-      <div className="container mx-auto px-4 py-8 max-w-7xl">
+      <div className=" mx-auto px-4 py-8 max-w-screen-2xl">
         <div className="flex flex-col lg:flex-row gap-8">
           <DashboardSidebar
             activeSection={activeSection}

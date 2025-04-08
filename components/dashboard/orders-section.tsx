@@ -19,7 +19,7 @@ export default function OrdersSection() {
     <div className="space-y-8">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="text-2xl font-bold tracking-tight text-gray-900">My Orders</h1>
+          <h1 className="text-2xl font-bold tracking-tight ">My Orders</h1>
           <p className="text-gray-500">View and track your order history.</p>
         </div>
         <div className="mt-4 sm:mt-0 flex items-center gap-2">
@@ -38,7 +38,7 @@ export default function OrdersSection() {
 
       {/* Orders Tabs */}
       <Tabs defaultValue="all" className="space-y-4">
-        <TabsList className="bg-gray-100 p-1">
+        <TabsList className="bg-zinc-100 dark:bg-zinc-950 p-1">
           <TabsTrigger value="all" className="data-[state=active]:bg-white data-[state=active]:text-gray-900">
             All Orders
           </TabsTrigger>

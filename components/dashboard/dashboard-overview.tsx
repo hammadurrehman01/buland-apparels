@@ -22,7 +22,7 @@ export default function DashboardOverview({ setActiveSection }: DashboardOvervie
     <div className="space-y-8">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
         <div>
-          <h1 className="text-2xl font-bold tracking-tight text-gray-900">Dashboard</h1>
+          <h1 className="text-2xl font-bold tracking-tight ">Dashboard</h1>
           <p className="text-gray-500">Welcome back to your Buland account.</p>
         </div>
         <div className="mt-4 sm:mt-0 flex items-center gap-2">
@@ -58,13 +58,13 @@ export default function DashboardOverview({ setActiveSection }: DashboardOvervie
           linkText="Manage payment methods"
           onClick={() => setActiveSection("payment")}
         />
-        <Card className="bg-white border border-gray-200 shadow-sm rounded-lg overflow-hidden">
+        <Card className="bg-white dark:bg-zinc-950 border border-gray-200 shadow-sm rounded-lg overflow-hidden">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
             <CardTitle className="text-sm font-medium">Loyalty Points</CardTitle>
             <Gift className="h-4 w-4 text-gray-500" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-gray-900">{dashboardData.stats.loyaltyPoints}</div>
+            <div className="text-2xl font-bold ">{dashboardData.stats.loyaltyPoints}</div>
             <div className="mt-2">
               <Progress value={45} className="h-2 bg-gray-200" />
             </div>
@@ -77,14 +77,14 @@ export default function DashboardOverview({ setActiveSection }: DashboardOvervie
 
       {/* Tabs Section */}
       <Tabs defaultValue="orders" className="space-y-4">
-        <TabsList className="bg-gray-100 p-1">
-          <TabsTrigger value="orders" className="data-[state=active]:bg-white data-[state=active]:text-gray-900">
+        <TabsList className="bg-white dark:bg-zinc-950 p-1">
+          <TabsTrigger value="orders" className="data-[state=active]:bg-white data-[state=active]:text-black">
             Recent Orders
           </TabsTrigger>
-          <TabsTrigger value="wishlist" className="data-[state=active]:bg-white data-[state=active]:text-gray-900">
+          <TabsTrigger value="wishlist" className="data-[state=active]:bg-white data-[state=active]:text-black">
             Wishlist
           </TabsTrigger>
-          <TabsTrigger value="upcoming" className="data-[state=active]:bg-white data-[state=active]:text-gray-900">
+          <TabsTrigger value="upcoming" className="data-[state=active]:bg-white data-[state=active]:text-black">
             Upcoming Deliveries
           </TabsTrigger>
         </TabsList>
@@ -93,12 +93,12 @@ export default function DashboardOverview({ setActiveSection }: DashboardOvervie
         <TabsContent value="orders" className="space-y-4">
           <div className="grid gap-4">
             {dashboardData.recentOrders.map((order) => (
-              <Card key={order.id} className="bg-white border border-gray-200 shadow-sm rounded-lg overflow-hidden">
+              <Card key={order.id} className="bg-white dark:bg-zinc-950 border border-gray-200 shadow-sm rounded-lg overflow-hidden">
                 <CardContent className="p-6">
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
                     <div className="mb-4 sm:mb-0">
                       <div className="flex items-center gap-2">
-                        <h3 className="font-semibold text-gray-900">Order #{order.id}</h3>
+                        <h3 className="font-semibold ">Order #{order.id}</h3>
                         <Badge
                           variant={
                             order.status === "Delivered"
@@ -125,7 +125,7 @@ export default function DashboardOverview({ setActiveSection }: DashboardOvervie
                     </div>
                     <div className="flex items-center gap-4">
                       <div className="text-right">
-                        <div className="font-medium text-gray-900">₨ {formatPrice(order.total)}</div>
+                        <div className="font-medium ">₨ {formatPrice(order.total)}</div>
                         <div className="text-xs text-gray-500">{order.items.length} items</div>
                       </div>
                       <Button
@@ -172,7 +172,7 @@ export default function DashboardOverview({ setActiveSection }: DashboardOvervie
               <Button
                 variant="outline"
                 onClick={() => setActiveSection("orders")}
-                className="border border-gray-300 bg-white hover:bg-gray-50 text-gray-800"
+                className="border border-gray-300 bg-white dark:bg-zinc-950 hover:bg-gray-50 "
               >
                 View All Orders
                 <ChevronRight className="ml-1 h-4 w-4" />
@@ -192,7 +192,7 @@ export default function DashboardOverview({ setActiveSection }: DashboardOvervie
             <Button
               variant="outline"
               onClick={() => setActiveSection("wishlist")}
-              className="border border-gray-300 bg-white hover:bg-gray-50 text-gray-800"
+              className="border border-gray-300 bg-white dark:bg-zinc-950 hover:bg-gray-50 text-gray-800"
             >
               View Full Wishlist
               <ChevronRight className="ml-1 h-4 w-4" />
@@ -207,13 +207,13 @@ export default function DashboardOverview({ setActiveSection }: DashboardOvervie
               {dashboardData.upcomingDeliveries.map((delivery) => (
                 <Card
                   key={delivery.id}
-                  className="bg-white border border-gray-200 shadow-sm rounded-lg overflow-hidden"
+                  className="bg-white dark:bg-zinc-950 border border-gray-200 shadow-sm rounded-lg overflow-hidden"
                 >
                   <CardContent className="p-6">
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
                       <div className="mb-4 sm:mb-0">
                         <div className="flex items-center gap-2">
-                          <h3 className="font-semibold text-gray-900">Order #{delivery.id}</h3>
+                          <h3 className="font-semibold ">Order #{delivery.id}</h3>
                           <Badge variant="secondary" className="bg-yellow-100 text-yellow-800">
                             {delivery.status}
                           </Badge>
@@ -285,7 +285,7 @@ export default function DashboardOverview({ setActiveSection }: DashboardOvervie
               <h3 className="text-xl font-bold mb-2">Exclusive Member Offer</h3>
               <p className="opacity-90">Use code MEMBER15 for an extra 15% off your next purchase.</p>
             </div>
-            <Button variant="outline" className="border-white text-white hover:bg-white/20 border">
+            <Button variant="outline" className="bg-white dark:bg-black  border-white text-black dark:text-white  border">
               Shop the Sale
             </Button>
           </div>
@@ -310,13 +310,13 @@ function StatsCard({
   onClick: () => void
 }) {
   return (
-    <Card className="bg-white border border-gray-200 shadow-sm rounded-lg overflow-hidden">
+    <Card className="bg-white dark:bg-zinc-950 border border-gray-200 shadow-sm rounded-lg overflow-hidden">
       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
         <CardTitle className="text-sm font-medium">{title}</CardTitle>
         {icon}
       </CardHeader>
       <CardContent>
-        <div className="text-2xl font-bold text-gray-900">{value}</div>
+        <div className="text-2xl font-bold ">{value}</div>
         <p className="text-xs text-gray-500">
           <button onClick={onClick} className="text-red-800 hover:underline">
             {linkText}
@@ -329,7 +329,7 @@ function StatsCard({
 
 function WishlistItem({ item }: { item: any }) {
   return (
-    <Card className="bg-white border border-gray-200 shadow-sm rounded-lg overflow-hidden">
+    <Card className="bg-white dark:bg-zinc-950 border border-gray-200 shadow-sm rounded-lg overflow-hidden">
       <div className="relative aspect-square">
         <Image
           src={item.image || "/placeholder.svg"}
@@ -344,9 +344,9 @@ function WishlistItem({ item }: { item: any }) {
         )}
       </div>
       <CardContent className="p-4">
-        <h3 className="font-medium line-clamp-1 text-gray-900">{item.name}</h3>
+        <h3 className="font-medium line-clamp-1 ">{item.name}</h3>
         <div className="flex justify-between items-center mt-2">
-          <div className="font-semibold text-gray-900">₨ {formatPrice(item.price)}</div>
+          <div className="font-semibold ">₨ {formatPrice(item.price)}</div>
           <Button
             size="sm"
             disabled={!item.inStock}
@@ -376,11 +376,11 @@ function EmptyState({
   buttonLink: string
 }) {
   return (
-    <Card className="bg-white border border-gray-200 shadow-sm rounded-lg overflow-hidden">
+    <Card className="bg-white dark:bg-zinc-950  border border-gray-200 shadow-sm rounded-lg overflow-hidden">
       <CardContent className="p-6 text-center">
         <div className="flex flex-col items-center justify-center py-8">
           {icon}
-          <h3 className="font-medium text-lg mb-2 text-gray-900">{title}</h3>
+          <h3 className="font-medium text-lg mb-2 ">{title}</h3>
           <p className="text-gray-500 mb-4">{description}</p>
           <Link href={buttonLink}>
             <Button className="bg-red-800 hover:bg-red-900 text-white">
