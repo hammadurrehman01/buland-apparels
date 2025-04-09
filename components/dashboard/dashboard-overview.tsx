@@ -285,7 +285,7 @@ export default function DashboardOverview({ setActiveSection }: DashboardOvervie
               <h3 className="text-xl font-bold mb-2">Exclusive Member Offer</h3>
               <p className="opacity-90">Use code MEMBER15 for an extra 15% off your next purchase.</p>
             </div>
-            <Button variant="outline" className="bg-white dark:bg-black  border-white text-black dark:text-white  border">
+            <Button variant="outline" className="bg-white dark:bg-black  border-white text-black dark:text-white hover:bg-red-800 hover:text-white dark:hover:bg-red-950 border">
               Shop the Sale
             </Button>
           </div>

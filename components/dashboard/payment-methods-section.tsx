@@ -8,13 +8,13 @@ export default function PaymentMethodsSection() {
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="text-2xl font-bold tracking-tight text-gray-900">Payment Methods</h1>
-        <p className="text-gray-500">Manage your saved payment methods.</p>
+        <h1 className="text-2xl font-bold tracking-tight ">Payment Methods</h1>
+        <p className="text-muted-foreground">Manage your saved payment methods.</p>
       </div>
 
       <div className="grid gap-6">
         {dashboardData.paymentMethods.map((method) => (
-          <Card key={method.id} className="bg-white border border-gray-200 shadow-sm rounded-lg overflow-hidden">
+          <Card key={method.id} className="bg-white dark:bg-zinc-950 border border-gray-200 shadow-sm rounded-lg overflow-hidden">
             <CardContent className="p-6">
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
                 <div className="flex items-center gap-4 mb-4 sm:mb-0">
@@ -28,7 +28,7 @@ export default function PaymentMethodsSection() {
                     )}
                   </div>
                   <div>
-                    <h3 className="font-medium text-gray-900">
+                    <h3 className="font-medium ">
                       {method.cardType} •••• {method.lastFour}
                     </h3>
                     <p className="text-sm text-gray-500">Expires {method.expiryDate}</p>
@@ -44,7 +44,7 @@ export default function PaymentMethodsSection() {
                     <Button
                       variant="outline"
                       size="sm"
-                      className="border border-gray-300 bg-white hover:bg-gray-50 text-gray-800"
+                      className="border border-gray-300 bg-white hover:bg-gray-50 text-gray-800 hover:text-gray-950"
                     >
                       Set as Default
                     </Button>
@@ -52,7 +52,7 @@ export default function PaymentMethodsSection() {
                   <Button
                     variant="outline"
                     size="sm"
-                    className="text-red-600 hover:text-red-700 border border-gray-300"
+                    className="text-red-600 hover:text-red-700 bg-zinc-50 font-medium hover:bg-zinc-100 border border-gray-300"
                   >
                     Remove
                   </Button>
@@ -63,10 +63,10 @@ export default function PaymentMethodsSection() {
         ))}
       </div>
 
-      <Card className="bg-white border border-gray-200 shadow-sm rounded-lg overflow-hidden">
+      <Card className="bg-white dark:bg-black border border-gray-200 shadow-sm rounded-lg overflow-hidden">
         <CardContent className="p-6">
           <div className="flex flex-col items-center justify-center py-4">
-            <h3 className="font-medium mb-2 text-gray-900">Add a New Payment Method</h3>
+            <h3 className="font-medium mb-2 ">Add a New Payment Method</h3>
             <p className="text-gray-500 text-center mb-4">Add a new credit or debit card to make checkout faster.</p>
             <Button className="bg-red-800 hover:bg-red-900 text-white">
               <Plus className="mr-2 h-4 w-4" />

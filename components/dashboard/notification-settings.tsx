@@ -33,25 +33,25 @@ export default function NotificationsSection() {
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="text-2xl font-bold tracking-tight text-gray-900">Notifications</h1>
-        <p className="text-gray-500">Manage your notification preferences.</p>
+        <h1 className="text-2xl font-bold tracking-tight ">Notifications</h1>
+        <p className="text-muted-foreground">Manage your notification preferences.</p>
       </div>
 
-      <Card className="bg-white border border-gray-200 shadow-sm rounded-lg overflow-hidden">
+      <Card className="bg-white dark:bg-zinc-950 border border-gray-200 shadow-sm rounded-lg overflow-hidden">
         <CardHeader>
-          <CardTitle className="text-gray-900">Notification Preferences</CardTitle>
-          <CardDescription className="text-gray-500">Manage how you receive notifications and updates.</CardDescription>
+          <CardTitle className="">Notification Preferences</CardTitle>
+          <CardDescription className="text-muted-foreground">Manage how you receive notifications and updates.</CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
           <div>
-            <h3 className="text-lg font-medium mb-4 text-gray-900">Email Notifications</h3>
+            <h3 className="text-lg font-medium mb-4 ">Email Notifications</h3>
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <div className="space-y-0.5">
-                  <Label htmlFor="email-marketing" className="text-gray-900">
+                  <Label htmlFor="email-marketing" className="">
                     Marketing and Promotions
                   </Label>
-                  <p className="text-sm text-gray-500">Receive emails about new products, sales, and special offers.</p>
+                  <p className="text-sm text-muted-foreground">Receive emails about new products, sales, and special offers.</p>
                 </div>
                 <Switch
                   id="email-marketing"
@@ -62,10 +62,10 @@ export default function NotificationsSection() {
               <Separator className="bg-gray-200" />
               <div className="flex items-center justify-between">
                 <div className="space-y-0.5">
-                  <Label htmlFor="email-orders" className="text-gray-900">
+                  <Label htmlFor="email-orders" className="">
                     Order Updates
                   </Label>
-                  <p className="text-sm text-gray-500">
+                  <p className="text-sm text-muted-foreground">
                     Receive emails about your order status, shipping, and delivery.
                   </p>
                 </div>
@@ -78,10 +78,10 @@ export default function NotificationsSection() {
               <Separator className="bg-gray-200" />
               <div className="flex items-center justify-between">
                 <div className="space-y-0.5">
-                  <Label htmlFor="email-products" className="text-gray-900">
+                  <Label htmlFor="email-products" className="">
                     New Products
                   </Label>
-                  <p className="text-sm text-gray-500">
+                  <p className="text-sm text-muted-foreground">
                     Receive emails when new products are added to our collections.
                   </p>
                 </div>
@@ -95,14 +95,14 @@ export default function NotificationsSection() {
           </div>
 
           <div>
-            <h3 className="text-lg font-medium mb-4 text-gray-900">SMS Notifications</h3>
+            <h3 className="text-lg font-medium mb-4 ">SMS Notifications</h3>
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <div className="space-y-0.5">
-                  <Label htmlFor="sms-orders" className="text-gray-900">
+                  <Label htmlFor="sms-orders" className="">
                     Order Updates
                   </Label>
-                  <p className="text-sm text-gray-500">Receive text messages about your order status and delivery.</p>
+                  <p className="text-sm text-muted-foreground">Receive text messages about your order status and delivery.</p>
                 </div>
                 <Switch
                   id="sms-orders"
@@ -113,10 +113,10 @@ export default function NotificationsSection() {
               <Separator className="bg-gray-200" />
               <div className="flex items-center justify-between">
                 <div className="space-y-0.5">
-                  <Label htmlFor="sms-promotions" className="text-gray-900">
+                  <Label htmlFor="sms-promotions" className="">
                     Promotions
                   </Label>
-                  <p className="text-sm text-gray-500">
+                  <p className="text-sm text-muted-foreground">
                     Receive text messages about sales, discounts, and special offers.
                   </p>
                 </div>

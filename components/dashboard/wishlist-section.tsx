@@ -10,14 +10,14 @@ export default function WishlistSection() {
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="text-2xl font-bold tracking-tight text-gray-900">My Wishlist</h1>
+        <h1 className="text-2xl font-bold tracking-tight ">My Wishlist</h1>
         <p className="text-gray-500">Items you've saved for later.</p>
       </div>
 
       {dashboardData.wishlist.length > 0 ? (
         <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {dashboardData.wishlist.map((item) => (
-            <Card key={item.id} className="bg-white border border-gray-200 shadow-sm rounded-lg overflow-hidden">
+            <Card key={item.id} className="bg-white dark:bg-zinc-950 border border-gray-200 shadow-sm rounded-lg overflow-hidden">
               <div className="relative aspect-square">
                 <Image
                   src={item.image || "/placeholder.svg"}
@@ -42,9 +42,9 @@ export default function WishlistSection() {
                 </Button>
               </div>
               <CardContent className="p-4">
-                <h3 className="font-medium line-clamp-1 text-gray-900">{item.name}</h3>
+                <h3 className="font-medium line-clamp-1 ">{item.name}</h3>
                 <div className="flex justify-between items-center mt-2">
-                  <div className="font-semibold text-gray-900">₨ {formatPrice(item.price)}</div>
+                  <div className="font-semibold ">₨ {formatPrice(item.price)}</div>
                   <Button
                     size="sm"
                     disabled={!item.inStock}
@@ -64,7 +64,7 @@ export default function WishlistSection() {
               <div className="h-12 w-12 rounded-full bg-gray-100 flex items-center justify-center mb-4">
                 <ShoppingBag className="h-6 w-6 text-gray-400" />
               </div>
-              <h3 className="font-medium text-lg mb-2 text-gray-900">Your Wishlist is Empty</h3>
+              <h3 className="font-medium text-lg mb-2 ">Your Wishlist is Empty</h3>
               <p className="text-gray-500 mb-4">Save items you like while browsing to add them to your wishlist.</p>
               <Link href="/categories/products">
                 <Button className="bg-red-800 hover:bg-red-900 text-white">

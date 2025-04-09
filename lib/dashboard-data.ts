@@ -82,7 +82,7 @@ export const dashboardData: DashboardData = {
       items: [
         {
           name: "Urban Chaos Tee",
-          image: "/product-3.jpg",
+          image: "/products/shirt-product-1.png",
         },
       ],
     },
@@ -94,11 +94,11 @@ export const dashboardData: DashboardData = {
       items: [
         {
           name: "Structured Collar Shirt",
-          image: "/product-4.jpg",
+          image: "/products/shirt-product-6.png",
         },
         {
           name: "Dystopia Oversized Tee",
-          image: "/product-5.jpg",
+          image: "/products/shirt-product-7.png",
         },
       ],
     },
@@ -106,30 +106,30 @@ export const dashboardData: DashboardData = {
   wishlist: [
     {
       id: 1,
-      name: "Minimal Stripe Shirt",
-      image: "/product-6.jpg",
-      price: 4999,
+      name: "Television Killed Your Vision",
+      image: "/props-1.png",
+      price: 1499,
       inStock: true,
     },
     {
       id: 2,
-      name: "Classic Fit Tee",
-      image: "/product-1.jpg",
-      price: 3799,
+      name: "NSX Hoodie",
+      image: "/motorsport-1.png",
+      price: 3000,
       inStock: true,
     },
     {
       id: 3,
-      name: "Premium Cotton Shirt",
-      image: "/product-2.jpg",
-      price: 4099,
+      name: "Aventador Hoodie",
+      image: "/motorsport-2.png",
+      price: 3000,
       inStock: false,
     },
     {
       id: 4,
-      name: "Urban Chaos Tee",
-      image: "/product-3.jpg",
-      price: 3699,
+      name: "Collosal Titan Hoodie",
+      image: "/product-3.png",
+      price: 3500,
       inStock: true,
     },
   ],
@@ -143,7 +143,7 @@ export const dashboardData: DashboardData = {
       items: [
         {
           name: "Urban Chaos Tee",
-          image: "/product-3.jpg",
+          image: "/product-front.png",
         },
       ],
     },

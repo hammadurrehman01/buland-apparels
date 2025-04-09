@@ -71,8 +71,8 @@ export default function SettingsSection({ successMessage, setSuccessMessage }: S
   return (
     <div className="space-y-8">
       <div>
-        <h1 className="text-2xl font-bold tracking-tight text-gray-900">Account Settings</h1>
-        <p className="text-gray-500">Manage your account settings and preferences.</p>
+        <h1 className="text-2xl font-bold tracking-tight ">Account Settings</h1>
+        <p className="text-muted-foreground">Manage your account settings and preferences.</p>
       </div>
 
       {successMessage && (
@@ -84,29 +84,29 @@ export default function SettingsSection({ successMessage, setSuccessMessage }: S
       )}
 
       <Tabs defaultValue="profile" className="space-y-4">
-        <TabsList className="bg-gray-100 p-1">
-          <TabsTrigger value="profile" className="data-[state=active]:bg-white data-[state=active]:text-gray-900">
+        <TabsList className="bg-gray-100 dark:bg-zinc-800 p-1">
+          <TabsTrigger value="profile" className="">
             Profile
           </TabsTrigger>
-          <TabsTrigger value="password" className="data-[state=active]:bg-white data-[state=active]:text-gray-900">
+          <TabsTrigger value="password" className="">
             Password
           </TabsTrigger>
-          <TabsTrigger value="preferences" className="data-[state=active]:bg-white data-[state=active]:text-gray-900">
+          <TabsTrigger value="preferences" className="">
             Preferences
           </TabsTrigger>
         </TabsList>
 
         {/* Profile Tab */}
         <TabsContent value="profile">
-          <Card className="bg-white border border-gray-200 shadow-sm rounded-lg overflow-hidden">
+          <Card className="bg-white dark:bg-zinc-950 border border-gray-200 shadow-sm rounded-lg overflow-hidden">
             <CardHeader>
-              <CardTitle className="text-gray-900">Profile Information</CardTitle>
-              <CardDescription className="text-gray-500">Update your personal information.</CardDescription>
+              <CardTitle className="">Profile Information</CardTitle>
+              <CardDescription className="text-muted-foreground">Update your personal information.</CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="space-y-2">
-                  <Label htmlFor="name" className="text-gray-900">
+                  <Label htmlFor="name" className="">
                     Full Name
                   </Label>
                   <Input
@@ -118,7 +118,7 @@ export default function SettingsSection({ successMessage, setSuccessMessage }: S
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="email" className="text-gray-900">
+                  <Label htmlFor="email" className="">
                     Email Address
                   </Label>
                   <Input
@@ -131,7 +131,7 @@ export default function SettingsSection({ successMessage, setSuccessMessage }: S
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="phone" className="text-gray-900">
+                  <Label htmlFor="phone" className="">
                     Phone Number
                   </Label>
                   <Input
@@ -187,16 +187,16 @@ export default function SettingsSection({ successMessage, setSuccessMessage }: S
 
         {/* Password Tab */}
         <TabsContent value="password">
-          <Card className="bg-white border border-gray-200 shadow-sm rounded-lg overflow-hidden">
+          <Card className="bg-white dark:bg-zinc-950 border border-gray-200 shadow-sm rounded-lg overflow-hidden">
             <CardHeader>
-              <CardTitle className="text-gray-900">Change Password</CardTitle>
-              <CardDescription className="text-gray-500">
+              <CardTitle className="">Change Password</CardTitle>
+              <CardDescription className="text-muted-foreground">
                 Update your password to keep your account secure.
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="currentPassword" className="text-gray-900">
+                <Label htmlFor="currentPassword" className="">
                   Current Password
                 </Label>
                 <Input
@@ -209,7 +209,7 @@ export default function SettingsSection({ successMessage, setSuccessMessage }: S
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="newPassword" className="text-gray-900">
+                <Label htmlFor="newPassword" className="">
                   New Password
                 </Label>
                 <Input
@@ -222,7 +222,7 @@ export default function SettingsSection({ successMessage, setSuccessMessage }: S
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="confirmPassword" className="text-gray-900">
+                <Label htmlFor="confirmPassword" className="">
                   Confirm New Password
                 </Label>
                 <Input
@@ -234,7 +234,7 @@ export default function SettingsSection({ successMessage, setSuccessMessage }: S
                   className="border-gray-300"
                 />
               </div>
-              <div className="text-sm text-gray-500">
+              <div className="text-sm text-muted-foreground">
                 <p>Password must:</p>
                 <ul className="list-disc list-inside pl-2 space-y-1 mt-1">
                   <li>Be at least 8 characters long</li>
@@ -284,38 +284,25 @@ export default function SettingsSection({ successMessage, setSuccessMessage }: S
 
         {/* Preferences Tab */}
         <TabsContent value="preferences">
-          <Card className="bg-white border border-gray-200 shadow-sm rounded-lg overflow-hidden">
+          <Card className="bg-white dark:bg-zinc-950 border border-gray-200 shadow-sm rounded-lg overflow-hidden">
             <CardHeader>
-              <CardTitle className="text-gray-900">Account Preferences</CardTitle>
-              <CardDescription className="text-gray-500">Manage your account preferences and settings.</CardDescription>
+              <CardTitle className="">Account Preferences</CardTitle>
+              <CardDescription className="text-muted-foreground">Manage your account preferences and settings.</CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
-              <div className="grid gap-4 sm:grid-cols-2">
-                <div className="space-y-2">
-                  <Label htmlFor="language" className="text-gray-900">
-                    Language
-                  </Label>
-                  <select
-                    id="language"
-                    className="flex h-10 w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-gray-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                  >
-                    <option value="English">English</option>
-                    <option value="Urdu">Urdu</option>
-                  </select>
-                </div>
-              </div>
+   
 
               <Separator className="bg-gray-200" />
 
               <div>
-                <h3 className="text-lg font-medium mb-4 text-gray-900">Privacy Settings</h3>
+                <h3 className="text-lg font-medium mb-4 ">Privacy Settings</h3>
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
                     <div className="space-y-0.5">
-                      <Label htmlFor="data-collection" className="text-gray-900">
+                      <Label htmlFor="data-collection" className="">
                         Data Collection
                       </Label>
-                      <p className="text-sm text-gray-500">
+                      <p className="text-sm text-muted-foreground">
                         Allow us to collect data about your browsing and shopping habits to improve your experience.
                       </p>
                     </div>
@@ -324,10 +311,10 @@ export default function SettingsSection({ successMessage, setSuccessMessage }: S
                   <Separator className="bg-gray-200" />
                   <div className="flex items-center justify-between">
                     <div className="space-y-0.5">
-                      <Label htmlFor="personalized-ads" className="text-gray-900">
+                      <Label htmlFor="personalized-ads" className="">
                         Personalized Ads
                       </Label>
-                      <p className="text-sm text-gray-500">
+                      <p className="text-sm text-muted-foreground">
                         Allow us to show you personalized advertisements based on your interests.
                       </p>
                     </div>
@@ -347,18 +334,18 @@ export default function SettingsSection({ successMessage, setSuccessMessage }: S
       </Tabs>
 
       {/* Danger Zone */}
-      <Card className="border-red-200 bg-red-50">
+      <Card className="border-red-200 bg-red-50 dark:bg-zinc-950">
         <CardHeader>
           <CardTitle className="text-red-800">Danger Zone</CardTitle>
-          <CardDescription className="text-gray-700">
+          <CardDescription className="">
             Actions in this section can permanently delete your account and all associated data.
           </CardDescription>
         </CardHeader>
         <CardContent>
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div>
-              <h3 className="font-medium text-gray-900">Delete Account</h3>
-              <p className="text-sm text-gray-600">
+              <h3 className="font-medium ">Delete Account</h3>
+              <p className="text-sm ">
                 Once you delete your account, there is no going back. This action cannot be undone.
               </p>
             </div>
